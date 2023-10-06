@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>問卷</title>
+	<link rel="stylesheet" href="css/same.css" />
+	<link rel="stylesheet" href="css/questionnaire.css" />
+
+	<script type="text/javascript">
+		//	檢查checkedbox是否被剔選
+		function ifChecked() {
+			var hidden = document.getElementById('detailForm');
+			var checked = document.f1.gift.checked
+
+			//	如果checked是true就將隱藏的div改設為顯示，並將該div下所需input設為必須輸入
+			if (checked == true) {
+				hidden.style.display = 'block';
+				document.f1.address.required = true;
+				document.f1.phoneNo.required = true;
+				document.f1.email.required = true;
+			} else {
+				//	如果沒有被checked將div設為隱藏， 並將該div下所需input的必須輸入設為否
+				hidden.style.display = 'none';
+				document.f1.address.required = false;
+				document.f1.phoneNo.required = false;
+				document.f1.email.required = false;
+			}
+		}
+
+		//	在submit時檢查電話號碼的輸入格式
+		function checkPhoneNo() {
+			var phoneReuired = document.f1.phoneNo.required
+
+			//	如果電話號碼input為必輸輸入，才會執行以下語句
+			if (phoneReuired == true) {
+				var index = document.f1.areacode.selectedIndex;
+				var regex;
+				var phone = document.f1.phoneNo.value;
+
+				// 檢測選取的index的值，設置符合該index值的正規表示法
+				if (index == 0) {
+					regex = /^[1-9][0-9]{10}$/;
+				} else if (index == 1 || index == 2) {
+					regex = /^[1-9][0-9]{7}$/;
+				} else if (index == 3) {
+					regex = /^[1-9][0-9]{8}$/;
+				}
+
+				//	如果電話號碼輸入的值不符合該正規表示法，將會有相關的window alert顯示
+				if (regex.test(phone) == false) {
+					if (index == 0)
+						alert("請輸入11位數電話號碼(開頭不為0)");
+					else if (index == 1 || index == 2)
+						alert("請輸入8位數電話號碼(開頭不為0)");
+					else if (index == 3)
+						alert("請輸入9位數電話號碼(開頭不為0)");
+					//	將鼠標目標在電話輸入欄
+					document.f1.phoneNo.focus();
+					//	傳回flase, 不能執行submit
+					return false;
+				}
+			}
+			//	傳回true，讓submit成功
+			return true;
+		}
+	</script>
+
+</head>
+
+<body>
+	<div class="menu">
+		<ul>
+			<li><a href="index.html">首頁</a></li>
+		</ul>
+		<ul>
+			<li><a>關於</a>
+				<ul class="sub">
+					<li><a href="faker.html">李相赫</a></li>
+					<li><a href="zed.html">劫</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li><a href="Questionnaire.html">問卷</a></li>
+		</ul>
+	</div>
+	<div class="form">
+		<h1>問卷和禮品表格</h1>
+		<div>*必填表格</div>
+		<form name="f1" onsubmit="return checkPhoneNo();">
+			<div>
+				<lable for="name">你的名字(英文):<span class="required">*</span></lable>
+				<input type="text" name="name" pattern="^[A-Z][ A-Za-z]*" title="第一個字母大寫的英文名字" placeholder="英文姓名e.g. WO Ni Ma" required><span class="errmsg">請輸入英文字母(第一個字大寫)</span>
+			</div>
+			<div>
+				<lable for="age">你的年齡:<span class="required">*</span></lable>
+				<input type="number" name="age" min="1" title="Enter age as a positive integer." required><span class="errmsg">請輸入大於0的數字</span>
+			</div>
+			<div>
+				<lable for="gender">性別：<span class="required">*</span></lable>
+				<input type="radio" name="gender" value="M" required> <span>男</span>
+				<input type="radio" name="gender" value="F"><span>女</span>
+			</div>
+			<div>
+				<lable for="degree">你喜歡Faker嗎?<span class="required">*</span></lable>
+				<input type="radio" name="degree" value="L" required> <span>喜歡</span>
+				<input type="radio" name="degree" value="N" required> <span>一般</span>
+				<input type="radio" name="degree" value="D" required> <span>不喜歡</span>
+			</div>
+			<div>
+				<input type="checkbox" name="gift" value="Y" onclick="ifChecked();"><span>您是否需要禮物(填寫問卷者有禮物贈送)</span>
+			</div>
+			<div id="detailForm">
+				<div>送貨個人詳情：</div>
+				<div>
+					<lable for="areacode">國家或地區:<span class="required">*</span></lable>
+					<select name="areacode">
+						<optgroup label="亞洲">
+							<option>+86(中國)</option>
+							<option>+852(香港)</option>
+							<option>+853(澳門)</option>
+							<option>+886(台灣)</option>
+						</optgroup>
+					</select>
+				</div>
+				<div>
+					<lable for="phoneNo">電話號碼:<span class="required">*</span></lable>
+					<input type="text" name="phoneNo" title="請輸入你的電話號碼">
+				</div>
+				<div>
+					<lable for="email">電郵地址:<span class="required">*</span></lable>
+					<input type="email" name="email" placeholder="電郵地址e.g. abc@xyz">
+				</div>
+
+				<div>
+					<lable>地址:<span class="required">*</span></lable>
+					<textarea name="address" placeholder="在這裡輸入你的地址"></textarea>
+				</div>
+			</div>
+			<div>
+				<input type="submit" name="submit" value="提交">
+				<input type="reset" name="reset" value="重設">
+			</div>
+		</form>
+	</div>
+	<div class="end">
+		<div class="endText1">
+			<h2>關於我們</h2>我們努力讓您了解所有關於 SK1 和 Faker 的信息。我們每天都發布並嘗試發布任何重複且無益的內容。感謝您的反饋意見。享受網站。
+		</div>
+		<div class="endText2">
+			<h2>未來計劃</h2>請分享並鼓勵朋友訪問本網站，我們將不勝感激。如果這個網站被證明是成功的，我們將製作一個 CS GO 網站以及一個 DOTA 網站。
+		</div>
+		<div class="endText3">
+			<h2>社交平臺</h2>我們有各個平臺的公衆號，如果有興趣可以查看，點贊，多謝大家對我們的支持和贊賞。
+		</div>
+	</div>
+</body></html>
