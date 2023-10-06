@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.menu {
+	/*	菜單列表置中*/
+	text-align: center;
+	/*	設置菜單背景為透明色*/
+	background-color: rgba(39, 38, 38, 0.8);
+	height: 45px;
+	width: 100%;
+}
+
+.menu ul {
+	/*	將列表樣式設為沒有*/
+	margin: 0;
+	list-style: none;
+	width: 100px;
+	/*	設置文字陰影*/
+	text-shadow: 2px 2px 2px yellow;
+	/*	設置菜單列表可以並排*/
+	display: inline-block;
+}
+
+
+.menu a {
+	/*	將文字樣式底線設置為無*/
+	margin: 0px;
+	text-decoration: none;
+	padding: 10px 20px;
+	/*	調整文字在列表高度*/
+	line-height: 1.5em;
+	color: white;
+	display: block;
+}
+
+/*當滑鼠移動到該菜單其中一欄時，設置不同效果*/
+.menu a:hover {
+	background-color: whitesmoke;
+	color: black;
+}
+
+/*設置子菜單格式*/
+.menu .sub {
+/*	設置定位為絕對通過top更改位置*/
+	position: absolute;
+	top: auto;
+	background-color: orange;
+	box-shadow: 5px 5px 5px white;
+/*	設置顯示為block可以將子菜單固定為對齊母菜單下*/
+	display: block;
+}
+
+/*當滑鼠移動到該子菜單其中一欄時，設置不同效果*/
+.menu .sub a:hover {
+	background-color: lightpink;
+	border-bottom: 3px solid red;
+}
+
+
+.menu .sub li {
+/*	隐藏溢出*/
+	overflow: hidden;
+/*	設置高度為0個大小，配合隱藏溢出，將子菜單隱藏*/
+	height: 0px;
+/*	設置顯示延遲時間*/
+	transition: 100ms;
+}
+
+/*當滑鼠移動到母菜單時，更改子菜單高度，從而顯示子菜單*/
+.menu ul li:hover .sub li {
+	height: 48px;
+}
+
+
+
+.end {
+	/*設立底部大小*/
+	display: flex;
+	color: aliceblue;
+	height: 250px;
+	width: 100%;
+	margin-top: 100px;
+}
+
+.end h2 {
+	/*標題上下間距*/
+	margin-top: 10px;
+	margin-bottom: 5%;
+}

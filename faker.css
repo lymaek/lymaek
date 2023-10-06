@@ -1,0 +1,194 @@
+body {  /*設立背景圖片，圖片置中顯示*/
+  background-image: url(../image/D0P_di4XgAE_OKH.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contain {  /*兩邊間距*/
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.information {
+  width: 100%;
+  height: 100%;
+}
+
+
+.infobox {
+  color:#FABCAF;
+  float: right;  /*向右邊浮動*/
+  clear: right; /*文字避開*/
+  border-spacing: 3px;/*單元格和邊框距離*/
+  width: 22em;
+  text-align: left;
+  font-size: small;
+  line-height: 30px;
+}
+
+.infobox .faker {
+  text-align: center;
+  font-size: 125%;
+  font-weight: bold; /*粗體*/
+}
+
+.infobox .selfinfo,
+.name {
+  text-align: center; /*文字置中*/
+}
+
+
+.Title h1,
+h2 {
+  margin-top: 20px
+}
+
+.Title {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #a2a9b1; /*加底框*/
+  margin-bottom: 20px;
+}
+
+h2 {
+  border-bottom: 1px solid #a2a9b1; /*加底框*/
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.team {
+  list-style: none; /*消除li的符號*/
+}
+
+.team li {
+  margin-bottom: 8px;
+}
+
+.img {
+  width: 35px;
+  height: 35px;
+}
+
+.text3 h3 {
+  column-span: all; /*標題獨占一行*/
+}
+
+.text3 {
+  column-count: 3;/*文字三段*/
+  column-rule: 2px solid brown; /*直綫*/
+}
+
+.teamHistory {
+  height: 200px;
+  width: 100%;
+}
+
+
+.history .list {
+  flex-direction: row;/*左至右排列*/
+  height: 170px;
+}
+
+.list ul {
+  position: relative;/*相對定位*/
+  list-style: none;
+
+}
+
+.list ul li {
+  float: left; /*向左浮動*/
+  margin-right: 10px;
+}
+
+.list ul li a {
+  height: 50px;
+  color: aliceblue;
+  text-decoration: none; /*取消底綫*/
+}
+
+ul li a:hover { 
+  background-color: gray;
+}
+
+
+ul li div {
+  position: absolute; /*絕對定位，隱藏文字*/
+  background: red;
+  left: 0;
+  top: 50px;
+  display: none;
+}
+
+ul li:hover div { /*划過顯示文字*/
+  display: block;
+}
+
+ul li:nth-child(1) div { /*預設顯示第一個子元素*/
+  display: block;
+}
+
+.endText1,
+.endText2,
+.endText3 {
+  /*文字三個部分大小和右間距*/
+  height: 100%;
+  width: 33%;
+  margin-right: 2%;
+
+}
+
+
+@media only screen and (max-width: 800px) {
+  .information {
+    width: 100%;
+    height: 100%;
+  }
+
+  .infobox {
+    width: 100%; /*放大table*/
+
+  }
+
+
+  .infobox td .fakerhead {
+    margin: 15%;
+    width: 70%
+  }
+
+
+  h1 {
+    text-align: center;
+  }
+
+  .text3 {
+    column-count: 2; /*文字兩段*/
+  }
+
+  body {
+    background: black;
+  }
+
+  td {
+    width: 0%; /*置中*/
+  }
+
+
+  .end {
+    /*底部方塊上下排列*/
+    flex-flow: column;
+  }
+
+  .endText1,
+  .endText2,
+  .endText3 {
+    /*文字縮小*/
+    width: 100%;
+    font-size: 14px;
+  }
+}

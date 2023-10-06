@@ -1,0 +1,529 @@
+.flex-container {
+  /*彈性佈局*/
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body {
+  background: black;
+}
+
+.zed {
+  /*佈局第一部分的大小*/
+  width: 100%;
+  height: 970px;
+
+}
+
+.zed .img {
+  background: rgba(0, 0, 0, 0.6);
+  background-position: 60% 0;
+  /*背景圖起始位置中間*/
+  background-blend-mode: multiply;
+  /*背景圖顔色和黑色混合后的顔色*/
+  background-image: url(../image/1XFW29.jpg);
+  background-repeat: no-repeat;
+  /*圖片不重複*/
+  background-size: auto;
+  margin: 0 auto;
+  /*置中*/
+  background-size: cover;
+  display: block;
+  padding: 10%;
+  width: 70%;
+}
+
+
+.zed .text1 {
+  position: absolute;
+  /*絕對定位*/
+  top: 80%;
+  right: 20%;
+  left: 20%;
+  color: aliceblue;
+  text-align: center;
+  box-shadow: 10px 5px 5px red;
+  /*紅色陰影*/
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+.zed .text1 h1 {
+  font-size: 50px
+    /*標題大小*/
+}
+
+
+.skill {
+  /*設立第二部分大小和背景*/
+  background-image: url(../image/bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 970px;
+  width: 100%;
+  height: 970px;
+    /*彈性佈局*/
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /*排序左至右*/
+  flex-wrap: wrap;
+  /*濶度不夠拐彎到下面*/
+  justify-content: space-between;
+  margin: 10%;
+}
+
+.skill .box {
+  position: relative;
+  /*相對定位，設立技能圖標大小和動畫效果*/
+  top: 50%;
+  left: 0%;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  /*溢出隱藏*/
+  transition: 0.5s;
+}
+
+.skill .box:hover {
+  /*划到圖標放大和顯示陰影*/
+  transform: scale(1.25);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+
+}
+
+.skill .box .img {
+  /*絕對定位圖標的位置*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.skill .box .img::before {
+  /*定位和隱藏輸入遮罩*/
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.skill .box:hover .img::before {
+  /*觸碰顯示遮罩和陰影*/
+  opacity: 1;
+  background: linear-gradient(to top, #222, transparent);
+}
+
+.skill .box .img img {
+  /*設立圖片位置和大小*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+   /*裁剪長邊*/
+  object-fit: cover;
+}
+
+.skill .box .text {
+  /*定位文字位置*/
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  display: flex;
+  align-items: flex-end;
+  /*放在底部*/
+  color: #fff;
+  z-index: 2;
+  /*文字在圖片上面*/
+}
+
+.skill .box .text h2 {
+  font-size: small;
+  margin-bottom: 1px;
+  transform: translateY(200px);
+  /*文字起始位置*/
+  transition: 0.5s;
+  /*0.5秒動畫*/
+}
+
+.skill .box:hover .text h2 {
+  transform: translateY(-25px);
+  /*移動后的位置*/
+  transition-delay: 0.3s;
+  /*過渡效果開始前等待0.3秒*/
+}
+
+
+.skill .left {
+  /*設立第二部分左部的大小*/
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  height: 50%;
+  top: 20%;
+  left: 0%;
+}
+
+
+.skill .right {
+  /*設立第二部分右部視頻的位置*/
+  position: relative;
+  width: 40%;
+  height: 30%;
+  left: 5%;
+  top: 35%;
+}
+
+.skill .right .textDiv {
+  /*設立視頻寬度*/
+  width: 100%;
+  height: 100%;
+}
+
+.skill .right .textDiv iframe {
+  /*設立iframe無邊框*/
+  width: 100%;
+  height: 100%;
+  border: none;
+
+}
+
+.skill .skillid {
+  /*標題文字的顔色和定位，粗體*/
+  color: white;
+  position: relative;
+  font-weight: bold;
+  font-size: 25px;
+  top: 20%;
+  left: 30%;
+}
+
+.text a {
+  /*超鏈接無底綫，白色，粗體*/
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.text a:hover {
+  /*划到鏈接文字，文字轉爲紅色*/
+  color: red;
+}
+
+
+.skin {
+  /*設立第三部分大小*/
+  width: 100%;
+  height: 970px;
+}
+
+.skin p {
+  /*標題大小，置中*/
+  font-weight: bold;
+  font-size: 25px;
+  color: aliceblue;
+  text-align: center;
+}
+
+
+.skin .introduce {
+  /*設立展示造型框大小和置中*/
+  width: 1000px;
+  height: 700px;
+  margin: 100px auto;
+}
+
+.skin .introduce ul {
+  /*相對定位圖片到ul的位置，*/
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  list-style: none;
+  background-color: aqua;
+
+}
+
+.skin .introduce ul li {
+  /*設立文字按鈕的大小和顔色，置中*/
+  list-style: none;
+  flex: 1;
+  height: 50px;
+  font-size: small;
+  text-align: center;
+  line-height: 50px;
+  background-color: #e3e2e2;
+}
+
+.skin .introduce ul li:hover {
+  /*點擊文字按鈕背景顔色轉變和出現紅色底框*/
+  background-color: #f7f6f6;
+  border-bottom: 2px solid red;
+}
+
+.skin .introduce ul li img {
+  /*絕對定位圖片左上角，和圖片不可見*/
+  position: absolute;
+  width: 1000px;
+  height: 650px;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+
+.skin .introduce ul li:nth-child(1) img {
+  /*預設圖片為第一個子元素*/
+  display: block;
+
+}
+
+
+.skin .introduce ul li:hover img {
+  /*觸碰按鈕相應圖片顯示*/
+  display: block;
+}
+
+
+.end {
+  /*設立底部大小*/
+  display: flex;
+  color: aliceblue;
+  height: 250px;
+  width: 100%;
+}
+
+.end h2 {
+  /*標題上下間距*/
+  margin-top: 10px;
+  margin-bottom: 5%;
+}
+
+.endText1,
+.endText2,
+.endText3 {
+  /*文字三個部分大小和右間距*/
+  height: 100%;
+  width: 33%;
+  margin-right: 2%;
+
+}
+
+
+@media only screen and (min-width:800px) and (max-width:1266px) {
+
+  .zed {
+    height: 600px;
+  }
+
+  .zed .text1 {
+    /*縮小文字和定位*/
+    top: 60%;
+    right: 10%;
+    left: 10%;
+    font-size: 10px;
+  }
+
+
+
+  .skill .skillid {
+    /*放大標題文字和定位到iframe下方*/
+    font-size: 45px;
+    left: 40%;
+    text-align: center;
+    top: 70%;
+  }
+
+  .skill .left {
+    /*重新設立左邊框大小和位置*/
+    width: 100%;
+    height: 25%;
+    top: 50%;
+
+  }
+
+  .skill .right {
+    /*設立右邊框大小和位置*/
+    width: 100%;
+    left: 0;
+    top: -50%;
+  }
+
+
+  .skill .right .textDiv {
+    /*定位視頻播放框位置和置中*/
+    position: relative;
+    top: 0;
+    right: 5%;
+    margin: 0px auto;
+  }
+
+
+  .skill .right .textDiv iframe {
+    /*擴大視頻寬度和高度*/
+    width: 110%;
+    height: 200%;
+
+  }
+
+
+  .skin .introduce {
+    /*重新設立展示區域大小*/
+    display: block;
+    width: 95%;
+    height: 650px;
+  }
+
+  .skin .introduce ul {
+    /*重新設立展示框大小*/
+    margin: auto;
+    width: 100%;
+    height: 650px;
+
+  }
+
+  .skin .introduce ul li img {
+    /*重新設立圖片大小*/
+    width: 100%;
+    height: 600px;
+  }
+
+  .skin p {
+    /*放大標題文字*/
+    font-size: 45px;
+  }
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+
+  .zed .text1 {
+    /*設立文字位置*/
+    top: 45%;
+    right: 10%;
+    left: 10%;
+  }
+
+  .zed .text1 h1 {
+    /*放大標題*/
+    font-size: 50px
+  }
+
+  .zed {
+    /*設立整體高度*/
+    height: 600px;
+  }
+
+
+
+  .skill {
+    /*設立高度和背景圖大小*/
+    height: 800px;
+    background-size: 100% 800px;
+  }
+
+  .skill .skillid {
+    /*定位文字位置和方法文字，置中*/
+    font-size: 45px;
+    left: 30%;
+    text-align: center;
+    top: 70%;
+
+  }
+
+  .skill .left {
+    /*重新設立左邊框大小和位置*/
+
+    width: 100%;
+    height: 25%;
+    top: 50%;
+
+  }
+
+  .skill .right {
+    /*重新設立右邊框大小和位置*/
+    width: 100%;
+    left: 0;
+    top: -50%;
+  }
+
+
+  .skill .right .textDiv {
+    /*重新設立視頻邊框位置和置中*/
+    position: relative;
+    top: 0;
+    right: 5%;
+    margin: 0px auto;
+  }
+
+
+  .skill .right .textDiv iframe {
+    /*放大視頻*/
+    width: 110%;
+    height: 200%;
+  }
+
+  .skin {
+    /*重新設立方塊大小*/
+    width: 100%;
+    height: 650px;
+  }
+
+  .skin .introduce {
+    display: block;
+    width: 95%;
+    height: 400px;
+  }
+
+  .skin .introduce ul {
+    /*置中*/
+    margin: auto;
+    width: 100%;
+    height: 400px;
+  }
+
+  .skin .introduce ul li {
+    /*文字上移*/
+    line-height: 25px;
+  }
+
+  .skin .introduce ul li img {
+    width: 100%;
+    height: 350px;
+  }
+
+  .skin p {
+    /*放大標題*/
+    font-size: 45px;
+  }
+
+  .end {
+    /*底部方塊上下排列*/
+    flex-flow: column;
+  }
+
+  .endText1,
+  .endText2,
+  .endText3 {
+    /*文字縮小*/
+    width: 100%;
+    font-size: 14px;
+  }
+}

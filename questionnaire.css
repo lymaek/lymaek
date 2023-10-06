@@ -1,0 +1,133 @@
+body {
+	background-image: url(../image/Zed_bg2.jpg);
+	background-color: black;
+	/*背景圖起始位置中間*/
+	background-position: 50% 0;
+/*	背景大小為覆蓋*/
+	background-size: cover;
+	/*背景固定,不會跟著滾輪滾動*/
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.form h1 {
+	margin: 0;
+	margin-bottom: 30px;
+	padding-top: 40px;
+	padding-bottom: 20px;
+/*	設置文字陰影為灰色*/
+	text-shadow: 5px 5px 5px grey;
+}
+
+.form {
+	/*	白色背景透明*/
+	background-color: rgba(255, 255, 255, 0.9);
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-left: 28%;
+}
+
+/*設置每個div之間的距離, 以邊框內向下增加高度*/
+.form div {
+	padding-bottom: 40px;
+}
+
+/*設置在div內的lable格式，將lable設置至輸入類型上面*/
+.form div lable {
+	display: block;
+	font-size: 30px;
+	margin-bottom: 5px;
+	font-family: cursive;
+}
+
+.form input,
+select,
+textarea {
+	border: 4px solid black;
+/*	設置邊框為圓弧*/
+	border-radius: 20px;
+/*	設置邊框陰影為黑色*/
+	box-shadow: 5px 5px 5px black;
+	font-size: 30px;
+	text-align: center;
+}
+
+.form textarea {
+	height: 200px;
+	width: 400px;
+	text-align: left;
+}
+
+/*設置輸入類型為radio和checkedbox的格式，並將陰影設置為無*/
+.form input[type="radio"],
+input[type="checkbox"] {
+	box-shadow: none;
+	width: 20px;
+	height: 20px;
+}
+
+/*在填寫一個輸入時更改輸入框格式*/
+input:focus,
+textarea:focus {
+	border: 5px solid yellow;
+	background-color: cornflowerblue;
+}
+
+.form span {
+	font-size: 20px;
+	margin-left: 5px;
+	margin-right: 20px;
+	padding: 3px;
+}
+
+/*當選擇了单选按鈕，按鈕後面的字就會被紅色圓框包住*/
+input[type="radio"]:checked + span {
+	border: 2px solid red;
+	border-radius: 20px;
+}
+
+input[name="age"] {
+	width: 100px;
+}
+
+/*設置呈送和重設按鈕樣式*/
+input[type="submit"],
+input[type="reset"] {
+	margin-right: 200px;
+	background-color: darkred;
+	color: mintcream;
+}
+
+/*設置提示信息和必填符號格式*/
+.errmsg,
+.required {
+	font-style: italic;
+	color: red;
+}
+
+/*當輸入的值是錯誤，後面有跟著的提示信息會顯示*/
+input:invalid + .errmsg {
+	display: inline;
+}
+
+/*當輸入的值是正確，後面有跟著的提示信息隱藏*/
+input:valid + .errmsg {
+	display: none;
+}
+
+/* 默認隱藏該區域*/
+#detailForm {
+	display: none;
+}
+
+/*更改頁尾格式*/
+.end {
+	/*	黑色透明背景*/
+	background-color: rgba(0, 0, 0, 0.7);
+/*	將頁尾格式符合該頁面格式*/
+	width: 80%;
+	margin-top: 0;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-top: 2%;
+}

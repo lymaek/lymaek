@@ -1,0 +1,61 @@
+body {
+	/*背景圖顔色黑色透明*/
+	background: rgba(0, 0, 0, 0.7);
+	/*背景圖起始位置中間*/
+	background-position: 50% 0;
+	/*背景圖顔色和黑色混合后的顔色*/
+	background-blend-mode: multiply;
+	background-image: url(../image/faker_background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*背景固定,不會跟著滾輪滾動*/
+	background-attachment: fixed;
+}
+
+.avatar {
+	text-align: center;
+}
+
+/*更改圖片格式的大小和邊框圓形*/
+img {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+/*	對圖片進行剪切後，保留原始比例*/
+	object-fit: cover;
+	border: 2px dashed white;
+}
+
+/*更改歡迎句子的格式*/
+.welcome {
+	display: block;
+	color: aliceblue;
+	text-align: center;
+	font-family: monospace;
+	font-size: 40px;
+	line-height: 100px;
+	text-shadow: 2px 2px 2px grey;
+}
+
+/*更改簡介句子格式使用邊框包住*/
+.introduction {
+	color: antiquewhite;
+	text-align: justify;
+	font-size: 30px;
+	margin-top: 50px;
+	margin-left: 20%;
+	margin-right: 20%;
+/*	邊框設置上方沒有，左右方和下方有*/
+	border-style: none ridge ridge;
+	border-width: 10px;
+	box-shadow: 6px 6px 6px grey;
+	padding: 10px;
+}
+
+.introduction strong {
+/*	將字型更改為有下劃線*/
+	text-decoration: underline;
+	text-decoration-color: dodgerblue;
+	font-style: italic;
+	color: darkgoldenrod;
+}
